@@ -1,3 +1,17 @@
+body {
+	background-color: #F37020;
+}
+
 h4 {
 	display: inline-block;
+	color: #fff;
+}
+
+img {
+	margin: auto;
+	padding: auto;
+}
+
+.movie {
+	width: 100%;
 }

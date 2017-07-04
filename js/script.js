@@ -28,10 +28,10 @@ function getGifs() {
         url: queryURL,
         method: "GET"
     }).done(function(response) {
-    	
+    	// for each of the 10 returned results, create a container with the gif and rating within
     	for (var i = 0; i < 10; i++) {
     		console.log(response.data[i].url);
-	    	var gifBox = $("<span class='gifBox'/>");
+	    	var gifBox = $("<div class='gifBox col-xs-12 col-sm-6 col-md-4 col-lg-3'/>");
 	    	var gif = $("<img>").attr("src", response.data[i].images.fixed_height.url);
 	    	var rating = $("<h4>").text("rating: " + response.data[i].rating);
 	    	$("#gifPanel").append(gifBox);
