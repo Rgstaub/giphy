@@ -28,10 +28,16 @@ function getGifs() {
         url: queryURL,
         method: "GET"
     }).done(function(response) {
-    	console.log(response);
-    	console.log(response.data[0].url);
-    	var gif = $("<img/>").attr("src", response.data[0].images.fixed_height.url);
-    	$("#gifPanel").append(gif);
+    	
+    	for (var i = 0; i < 10; i++) {
+    		console.log(response.data[i].url);
+	    	var gifBox = $("<span class='gifBox'/>");
+	    	var gif = $("<img>").attr("src", response.data[i].images.fixed_height.url);
+	    	var rating = $("<h4>").text("rating: " + response.data[i].rating);
+	    	$("#gifPanel").append(gifBox);
+	    	gifBox.append(gif);
+	    	gifBox.append(rating);
+    	}
     })
 }
 
