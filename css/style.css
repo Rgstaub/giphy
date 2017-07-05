@@ -3,7 +3,6 @@ body {
 }
 
 h4 {
-	display: inline-block;
 	color: #fff;
 }
 
@@ -11,6 +10,11 @@ img {
 	margin: auto;
 	padding: auto;
 }
+
+.hidden {
+	display: none;
+}
+
 
 .movie {
 	width: 100%;
