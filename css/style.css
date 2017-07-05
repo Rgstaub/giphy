@@ -9,6 +9,12 @@ h4 {
 img {
 	margin: auto;
 	padding: auto;
+	width: 100%;
+}
+
+label {
+	color: #fff;
+	padding-right: 20px;
 }
 
 .hidden {
@@ -18,4 +24,27 @@ img {
 
 .movie {
 	width: 100%;
+}
+
+.searchButton {
+	margin: 5px;
+}
+
+#buttonHome {
+	clear: both;
+}
+
+#logoPanel {
+	margin-bottom: 30px;
+}
+
+#searchPanel {
+	margin-top: 150px;
+	margin-bottom: 15px;
+}
+
+@media screen and (max-width: 992px) {
+	#searchPanel {
+		margin-top: 15px;
+	}
 }
