@@ -7,6 +7,8 @@
 var buttons = ["GOB", "Buster", "Michael", "George Sr.", "Lucille", "Lindsay", "George Michael", "Tobias", "Maebe", "Ann", "Steve Holt"];
 var apiKey = "bfeb7254f14c49bda91dfb078a370b0c";
 
+// For this assignment I challenged myself to use jQuery to build all HTML elements
+
 // Create the HTML elements that will provide structure for the page contents
 var container = $("<div class='container-fluid'><div class='row'></div></div>");
 $("body").prepend(container);
@@ -21,7 +23,7 @@ container.append(logoPanel).append(searchPanel).append(buttonHome).append(gifPan
 var input = $("<form/>").attr("id", "input-form");
 var label = $("<label>").attr({for:"input-text", id:"input-label"}).text("Add your own ");
 var textBox = $("<input>").attr({type:"text", id:"input-text"});
-var button = $("<input>").attr({type:"submit", id:"input-submit", value:"Add"});
+var button = $("<input>").attr({type:"submit", id:"input-submit", value:"Add"}).addClass("btn btn-default btn-sm");
 $("#searchPanel").append(input);
 input.append(label).append(textBox).append(button);
 
@@ -50,7 +52,6 @@ $(document).ready(function() {
 		$("#gifPanel").empty();
 		var picked = $(this).attr("value");
 		var search = picked.replace(" ", "+") + "+arrested+development";
-		console.log(search);
 		//build the query URL based on the text of the button clicked
 		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=" + apiKey + "&limit=10";
 		//make the API call
@@ -59,7 +60,6 @@ $(document).ready(function() {
 	        method: "GET"
 	    }).done(function(response) {
 	    	// for each of the 10 returned results, create a container with the gif (hidden), still image, and rating within
-	    	console.log(response);
 	    	for (var i = 0; i < 10; i++) {
 		    	var gifBox = $("<div class='gifBox col-xs-12 col-sm-6 col-md-4 col-lg-3'/>");
 		    	var gif = $("<img>").attr("src", response.data[i].images.fixed_width.url).addClass("gif hidden");
